@@ -9,7 +9,7 @@ function App() {
       const hls = new Hls();
       hls.attachMedia(document.getElementById('video'));
       hls.on(Hls.Events.MEDIA_ATTACHED, () => {
-        hls.loadSource("http://71.175.108.112:8080/hls/stream.m3u8");
+        hls.loadSource("https://birdcam-cam.grant.dev/hls/stream.m3u8");
       });
     }
   })
