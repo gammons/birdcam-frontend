@@ -1,33 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
+import { useEffect } from 'react'
+import Hls from 'hls.js'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.attachMedia(document.getElementById('video'));
+      hls.on(Hls.Events.MEDIA_ATTACHED, () => {
+        hls.loadSource("http://71.175.108.112:8080/hls/stream.m3u8");
+      });
+    }
+  })
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="header">
+        <h1>Birdcam</h1>
+        <p>Watch the baby birds grow!  ...or, get eaten by an Owl or something.</p>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+      <div className="videoContainer">
+        <video id="video" autoPlay={true} controls="controls" type='application/x-mpegURL' />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </div>
+      <div className="content">
+        <h2>What is this?</h2>
+        <p>Some <a href="https://www.allaboutbirds.org/guide/House_Finch/overview">House finches</a> have decided to make a nest in ony of my window panes.  So, I did what any techie would do, I set up an old Raspberry Pi and an old webcam to keep tabs on them!</p>
+        <h2>What will I see?</h2>
+        <p>There are 2 baby birds, who are tended by the parent birds.  The female is gray colored, while the male has a red head.  Both of them seem to feed the birds.</p>
+      </div>
+    </div >
   )
 }
 

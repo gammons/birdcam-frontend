@@ -1,12 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-family: Lato, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 18px;
   line-height: 24px;
-  font-weight: 400;
+  font-weight: 300;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #333;
+  background-color: #FFe0eB;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -26,34 +29,32 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
 
 h1 {
-  font-size: 3.2em;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: 'Satisfy', cursive;
+  font-size: 7em;
   line-height: 1.1;
+  font-weight: 400;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+h2 {
+  margin-top: 40px;
+  margin-bottom: 0;
+  font-family: 'Satisfy', cursive;
+  font-size: 3em;
+  line-height: 1.1;
+  font-weight: 400;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+video {
+  width: 100%;
+  max-width: 1600px;
+
 }
 
 @media (prefers-color-scheme: light) {
